@@ -3,7 +3,8 @@ import 'phaser';
 import config from './config';
 import Phaser from 'phaser';
 import BootScene from './Scenes/Boot';
-import TitleScene from './Scenes/TItleScene';
+import TitleScene from './Scenes/TitleScene';
+import Game from './Scenes/Game';
 
 class Game extends Phaser.Game {
   constructor() {
@@ -18,7 +19,7 @@ class Game extends Phaser.Game {
     };
     this.scene.add('Boot', BootScene);
     this.scene.add('Title', TitleScene);
-
+    this.scene.add('Game', Game);
     this.scene.start('Boot');
   }
 }
