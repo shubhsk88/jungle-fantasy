@@ -5,9 +5,9 @@
   "main": "src/index.js",
   "scripts": {
     "test": "jest",
-    "build":"webpack",
-    "watch":"webpack --watch",
-    "start":"npm run build && webpack-dev-server"
+    "build": "webpack",
+    "watch": "webpack --watch",
+    "start": "npm run build && webpack-dev-server"
   },
   "keywords": [],
   "author": "",
