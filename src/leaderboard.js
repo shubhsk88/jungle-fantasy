@@ -1,4 +1,5 @@
 import 'regenerator-runtime';
+import fetch from 'node-fetch';
 
 const url =
   'https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/OIM149NVoJbrVcsCvIac/scores';
