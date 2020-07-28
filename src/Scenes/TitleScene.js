@@ -14,14 +14,16 @@ export default class TitleScene extends Phaser.Scene {
       .setOrigin(0.5);
 
     const textContainer = document.createElement('input', 'text');
-    textContainer.style = 'padding:10px;background:white;width:400px;font-size:30px;height:30px;color:black;border-radius:10px';
+    textContainer.style =
+      'padding:10px;background:white;width:400px;font-size:30px;height:30px;color:black;border-radius:10px';
     this.add
-      .text(300, 230, 'Use your arrow keys and space key  ', {
+      .text(300, 250, 'Use your arrow keys and space key  ', {
         fontSize: '20px',
       })
       .setOrigin(0.5);
     const btn = document.createElement('button');
-    btn.style = 'background: url(assets/images/button_small.png);width:400px;height:77px; border: none; font: 32px Georgia; color: #fff;';
+    btn.style =
+      'background: url(assets/images/button_small.png);width:400px;height:77px; border: none; font: 32px Georgia; color: #fff;';
     btn.innerText = 'Start the game';
     this.add.dom(300, 200, textContainer);
     const button = this.add.dom(300, 300, btn);
@@ -38,7 +40,8 @@ export default class TitleScene extends Phaser.Scene {
     });
 
     const btn2 = document.createElement('button');
-    btn2.style = 'background: url(assets/images/button_small.png);width:420px;height:77px; border: none; font: 32px Georgia; color: #fff;';
+    btn2.style =
+      'background: url(assets/images/button_small.png);width:420px;height:77px; border: none; font: 32px Georgia; color: #fff;';
     btn2.innerText = 'LeaderBoard';
     const leaderbtn = this.add.dom(300, 400, btn2);
 
