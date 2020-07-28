@@ -21,7 +21,7 @@ export default class GameScene extends Phaser.Scene {
   create() {
     
     this.events.on('resize', this.resize, this);
-    // listen for player input
+    
     this.cursors = this.input.keyboard.createCursorKeys();
     this.spaceKey = this.input.keyboard.addKey(
       Phaser.Input.Keyboard.KeyCodes.SPACE
