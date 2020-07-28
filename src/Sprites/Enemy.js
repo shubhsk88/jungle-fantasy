@@ -1,28 +1,23 @@
 import 'phaser';
 
 export default class Enemy extends Phaser.Physics.Arcade.Sprite {
-  constructor (scene, x, y, frame) {
+  constructor(scene, x, y, frame) {
     super(scene, x, y, 'slime');
     this.scene = scene;
-    this.health = 1+Math.floor(Math.random()*10);
+    this.health = 1 + Math.floor(Math.random() * 10);
 
-    // enable physics
     this.scene.physics.world.enable(this);
-    // add our player to the scene
     this.scene.add.existing(this);
-    // scale our player
-    this.setScale(1);
 
-    // move our enemy
     this.timeEvent = this.scene.time.addEvent({
       delay: 3000,
       callback: this.move,
       loop: true,
-      callbackScope: this
+      callbackScope: this,
     });
   }
 
-  loseHealth () {
+  loseHealth() {
     this.health--;
     this.tint = 0xff0000;
     if (this.health === 0) {
@@ -33,13 +28,13 @@ export default class Enemy extends Phaser.Physics.Arcade.Sprite {
         delay: 200,
         callback: () => {
           this.tint = 0xffffff;
-        }
+        },
       });
     }
   }
 
-  move () {
-    const randNumber = Math.floor((Math.random() * 4) + 1);
+  move() {
+    const randNumber = Math.floor(Math.random() * 4 + 1);
     switch (randNumber) {
       case 1:
         this.setVelocityX(100);
@@ -62,7 +57,7 @@ export default class Enemy extends Phaser.Physics.Arcade.Sprite {
       callback: () => {
         if (this.active) this.setVelocity(0);
       },
-      callbackScope: this
+      callbackScope: this,
     });
   }
 }
