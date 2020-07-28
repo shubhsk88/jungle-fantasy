@@ -1,6 +1,5 @@
 import 'regenerator-runtime';
 
-
 const url = 'https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/OIM149NVoJbrVcsCvIac/scores';
 
 const storeScore = async (user, score) => {
