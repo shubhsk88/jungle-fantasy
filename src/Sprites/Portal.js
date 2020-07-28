@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 import 'phaser';
 
 export default class Player extends Phaser.Physics.Arcade.Sprite {

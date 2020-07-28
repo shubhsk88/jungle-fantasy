@@ -1,3 +1,4 @@
+/* eslint-disable no-undef,no-underscore-dangle,no-useless-constructor */
 import 'phaser';
 import Player from '../Sprites/Player';
 import Portal from '../Sprites/Portal';
@@ -5,6 +6,7 @@ import Coins from '../Groups/Coins';
 import Enemies from '../Groups/Enemies';
 import Bullets from '../Groups/Bullets';
 import { storeScore } from '../leaderboard';
+
 export default class GameScene extends Phaser.Scene {
   constructor(key) {
     super(key);
@@ -19,12 +21,11 @@ export default class GameScene extends Phaser.Scene {
   }
 
   create() {
-    
     this.events.on('resize', this.resize, this);
-    
+
     this.cursors = this.input.keyboard.createCursorKeys();
     this.spaceKey = this.input.keyboard.addKey(
-      Phaser.Input.Keyboard.KeyCodes.SPACE
+      Phaser.Input.Keyboard.KeyCodes.SPACE,
     );
 
     this.createMap();
@@ -32,12 +33,11 @@ export default class GameScene extends Phaser.Scene {
     this.createPortal();
     this.coins = this.map.createFromObjects('Coins', 'Coin', { key: 'coin' });
     this.coinsGroup = new Coins(this.physics.world, this, [], this.coins);
-    
+
     this.enemies = this.map.createFromObjects('Enemies', 'Enemy', {});
     this.enemiesGroup = new Enemies(this.physics.world, this, [], this.enemies);
     this.bullets = new Bullets(this.physics.world, this, []);
 
-    
     this.addCollisions();
 
     this.cameras.main.startFollow(this.player);
@@ -50,7 +50,7 @@ export default class GameScene extends Phaser.Scene {
       this.bullets.fireBullet(
         this.player.x,
         this.player.y,
-        this.player.direction
+        this.player.direction,
       );
     }
   }
@@ -61,22 +61,22 @@ export default class GameScene extends Phaser.Scene {
     this.physics.add.overlap(
       this.player,
       this.enemiesGroup,
-      this.player.enemyCollision.bind(this.player)
+      this.player.enemyCollision.bind(this.player),
     );
     this.physics.add.overlap(
       this.player,
       this.portal,
-      this.loadNextLevel.bind(this, false)
+      this.loadNextLevel.bind(this, false),
     );
     this.physics.add.overlap(
       this.coinsGroup,
       this.player,
-      this.coinsGroup.collectCoin.bind(this.coinsGroup)
+      this.coinsGroup.collectCoin.bind(this.coinsGroup),
     );
     this.physics.add.overlap(
       this.bullets,
       this.enemiesGroup,
-      this.bullets.enemyCollision
+      this.bullets.enemyCollision,
     );
   }
 
@@ -120,7 +120,7 @@ export default class GameScene extends Phaser.Scene {
       'Background',
       this.tiles,
       0,
-      0
+      0,
     );
     this.blockedLayer = this.map.createStaticLayer('Blocked', this.tiles, 0, 0);
     this.blockedLayer.setCollisionByExclusion([-1]);

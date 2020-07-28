@@ -1,3 +1,4 @@
+/* eslint-disable no-undef,no-unused-vars */
 import 'phaser';
 import Enemy from '../Sprites/Enemy';
 
@@ -13,13 +14,13 @@ export default class Enemies extends Phaser.Physics.Arcade.Group {
   createEnemies(scene, spriteArray) {
     spriteArray.forEach((sprite) => {
       const randNumber = Math.floor(
-        Math.random() * this.spriteFrames.length - 1
+        Math.random() * this.spriteFrames.length - 1,
       );
       const enemy = new Enemy(
         scene,
         sprite.x,
         sprite.y,
-        this.spriteFrames[randNumber]
+        this.spriteFrames[randNumber],
       );
       this.add(enemy);
       sprite.destroy();

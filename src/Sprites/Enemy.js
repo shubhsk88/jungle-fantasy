@@ -1,3 +1,4 @@
+/* eslint-disable no-undef,no-unused-vars */
 import 'phaser';
 
 export default class Enemy extends Phaser.Physics.Arcade.Sprite {
@@ -18,7 +19,7 @@ export default class Enemy extends Phaser.Physics.Arcade.Sprite {
   }
 
   loseHealth() {
-    this.health--;
+    this.health -= 1;
     this.tint = 0xff0000;
     if (this.health === 0) {
       this.timeEvent.destroy();

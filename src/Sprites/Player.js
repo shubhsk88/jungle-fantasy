@@ -1,3 +1,4 @@
+/* eslint-disable no-undef,no-unused-vars */
 import 'phaser';
 
 export default class Player extends Phaser.Physics.Arcade.Sprite {
@@ -8,11 +9,10 @@ export default class Player extends Phaser.Physics.Arcade.Sprite {
     this.hitDelay = false;
     this.direction = 'up';
 
-   
     this.scene.physics.world.enable(this);
     this.scene.add.existing(this);
-   
-    const anims = this.scene.anims;
+
+    const { anims } = this.scene;
 
     anims.create({
       key: 'left',
@@ -82,7 +82,7 @@ export default class Player extends Phaser.Physics.Arcade.Sprite {
   }
 
   loseHealth() {
-    this.health--;
+    this.health -= 1;
     this.scene.events.emit('loseHealth', this.health);
     if (this.health === 0) {
       this.scene.loadNextLevel(true);

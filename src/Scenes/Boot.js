@@ -1,3 +1,4 @@
+/* eslint-disable no-undef,no-useless-constructor */
 import 'phaser';
 
 export default class BootScene extends Phaser.Scene {

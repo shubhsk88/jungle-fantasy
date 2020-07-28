@@ -1,3 +1,4 @@
+/* eslint-disable no-undef ,class-methods-use-this */
 import 'phaser';
 
 export default class Bullets extends Phaser.Physics.Arcade.Group {

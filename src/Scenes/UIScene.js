@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 import 'phaser';
 
 export default class UIScene extends Phaser.Scene {
@@ -15,7 +16,7 @@ export default class UIScene extends Phaser.Scene {
       fill: '#fff',
     });
 
-    this.healthText = this.add.text(12, 50, `Health: 3`, {
+    this.healthText = this.add.text(12, 50, 'Health: 3', {
       fontSize: '32px',
       fill: '#fff',
     });
@@ -23,7 +24,7 @@ export default class UIScene extends Phaser.Scene {
     this.gameScene = this.scene.get('Game');
 
     this.gameScene.events.on('coinCollected', () => {
-      this.coinsCollected++;
+      this.coinsCollected += 1;
       this.sys.game.globals.score = this.coinsCollected;
       this.scoreText.setText(`Score: ${this.coinsCollected}`);
     });
@@ -35,7 +36,7 @@ export default class UIScene extends Phaser.Scene {
     this.gameScene.events.on('newGame', () => {
       this.coinsCollected = 0;
       this.scoreText.setText(`Score: ${this.coinsCollected}`);
-      this.healthText.setText(`Health: 3`);
+      this.healthText.setText('Health: 3');
     });
   }
 }

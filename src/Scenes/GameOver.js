@@ -1,4 +1,4 @@
-import config from '../config';
+/* eslint-disable no-undef */
 
 export default class GameOver extends Phaser.Scene {
   constructor() {
@@ -6,14 +6,14 @@ export default class GameOver extends Phaser.Scene {
   }
 
   create() {
-    (this.back = this.add.image(320, 240, 'background')),
-      this.add
-        .text(300, 100, 'Game Over', {
-          color: 'White',
-          fontSize: '32px',
-          fotnFamily: 'Georgia',
-        })
-        .setOrigin(0.5, 0.5);
+    this.back = this.add.image(320, 240, 'background');
+    this.add
+      .text(300, 100, 'Game Over', {
+        color: 'White',
+        fontSize: '32px',
+        fotnFamily: 'Georgia',
+      })
+      .setOrigin(0.5, 0.5);
 
     this.add
       .text(300, 150, `Score: ${this.sys.game.globals.score}`, {
@@ -22,8 +22,7 @@ export default class GameOver extends Phaser.Scene {
       })
       .setOrigin(0.5, 0.5);
     const btn = document.createElement('button');
-    btn.style =
-      'background: url(assets/images/button_small.png);width:420px;height:77px; border: none; font: 32px Georgia; color: #fff;';
+    btn.style = 'background: url(assets/images/button_small.png);width:420px;height:77px; border: none; font: 32px Georgia; color: #fff;';
     btn.innerText = 'Play Again';
     const ele = this.add.dom(300, 250, btn);
 
@@ -39,8 +38,7 @@ export default class GameOver extends Phaser.Scene {
     });
 
     const btn2 = document.createElement('button');
-    btn2.style =
-      'background: url(assets/images/button_small.png);width:420px;height:77px; border: none; font: 32px Georgia; color: #fff;';
+    btn2.style = 'background: url(assets/images/button_small.png);width:420px;height:77px; border: none; font: 32px Georgia; color: #fff;';
     btn2.innerText = 'LeaderBoard';
     const leaderbtn = this.add.dom(300, 400, btn2);
 

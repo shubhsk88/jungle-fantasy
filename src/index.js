@@ -1,7 +1,7 @@
-import 'phaser';
+import Phaser from 'phaser';
 
 import config from './config';
-import Phaser from 'phaser';
+
 import BootScene from './Scenes/Boot';
 import TitleScene from './Scenes/TitleScene';
 import GameScene from './Scenes/Game';

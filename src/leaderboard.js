@@ -1,8 +1,7 @@
 import 'regenerator-runtime';
 import fetch from 'node-fetch';
 
-const url =
-  'https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/OIM149NVoJbrVcsCvIac/scores';
+const url = 'https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/OIM149NVoJbrVcsCvIac/scores';
 
 const storeScore = async (user, score) => {
   const body = JSON.stringify({ user, score });

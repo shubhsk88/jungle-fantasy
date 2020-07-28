@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 import { getScores } from '../leaderboard';
 
 export default class LeaderBoard extends Phaser.Scene {
@@ -42,8 +43,7 @@ export default class LeaderBoard extends Phaser.Scene {
       });
     });
     const btn2 = document.createElement('button');
-    btn2.style =
-      'background: url(assets/images/button_small.png);width:420px;height:77px; border: none; font: 32px Georgia; color: #fff;';
+    btn2.style = 'background: url(assets/images/button_small.png);width:420px;height:77px; border: none; font: 32px Georgia; color: #fff;';
     btn2.innerText = 'Main Menu';
     const leaderbtn = this.add.dom(300, 430, btn2);
     leaderbtn.addListener('click');
