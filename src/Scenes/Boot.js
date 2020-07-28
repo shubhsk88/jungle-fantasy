@@ -16,7 +16,7 @@ export default class BootScene extends Phaser.Scene {
 
     this.load.image('portal', 'assets/images/raft.png');
     this.load.image('title', 'assets/images/title1.png');
-   
+
     this.load.image('coin', 'assets/images/coin_01.png');
     this.load.image('slime', 'assets/images/slime.png');
     this.load.spritesheet('player', 'assets/images/player.png', {
@@ -28,6 +28,6 @@ export default class BootScene extends Phaser.Scene {
   }
 
   create() {
-   
+    this.scene.start('Title');
   }
 }
