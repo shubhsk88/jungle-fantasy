@@ -12,7 +12,7 @@ global.fetch = jest.fn(() => ({
 
 describe('The score should be written and read from  the api', () => {
   it('Should post the score', () => {
-    storeScore('sam', 20).then((data) => expect(data.result).toEqual([
+    storeScore('sam', 1).then((data) => expect(data.result).toEqual([
       { score: '120', user: 'Player1' },
       { score: '240', user: 'Player2' },
       { score: '1500', user: 'Player3' },

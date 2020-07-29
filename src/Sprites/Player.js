@@ -1,5 +1,5 @@
 /* eslint-disable no-undef,no-unused-vars */
-import 'phaser';
+import Phaser from 'phaser';
 
 export default class Player extends Phaser.Physics.Arcade.Sprite {
   constructor(scene, x, y) {
